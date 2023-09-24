@@ -13,7 +13,7 @@ label{
     font-size: 20px;
 }
 
-.date-time{
+.Title{
     text-align: center;
     color:white;
     align-items: center;
@@ -115,6 +115,10 @@ label{
     border:none;
 }
 
+.Add:hover{
+    background-color: #a64dff;
+}
+
 
 .CustomList{
     text-align: center;
@@ -143,4 +147,18 @@ label{
     border-radius: 50%;
     background-color: #9933ff;
     border:none;
+}
+
+.Home{
+    width:100px;
+    height:40px;
+    background-color: #9933ff;
+    color: white;
+    border: none;
+    size: 15px;
+    border-radius: 5px;
+}
+
+.Home:hover{
+    background-color: #a64dff;
 }
