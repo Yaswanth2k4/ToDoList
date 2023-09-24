@@ -9,7 +9,6 @@ app.use(express.static("public"))
 app.use(parser.urlencoded({extended:true}));
 
 mongoose.connect("mongodb+srv://theyaswanthkurapati:Yaswanth64@yaswanth.f5knhog.mongodb.net/ToDoDB?retryWrites=true&w=majority",{useNewUrlParser:true});
-//mongoose.connect("mongodb://127.0.0.1/ToDoDB",{useNewUrlParser:true});
 
 //TODAY LIST
 
