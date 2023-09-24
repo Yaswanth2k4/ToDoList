@@ -115,6 +115,11 @@ app.get("/:customListName", async (req,res)=>{
     }
 })
 
+app.post("/newList",(req,res)=>{
+    const ListName=req.body.ListName;
+    res.redirect(`/${ListName}`);
+})
+
 var port=process.env.PORT;
 if(port==null || port=="")
 {
