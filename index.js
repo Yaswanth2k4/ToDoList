@@ -4,7 +4,6 @@ import mongoose from "mongoose";
 import _ from "lodash";
 
 const app=express();
-const port=3000;
 
 app.use(express.static("public"))
 app.use(parser.urlencoded({extended:true}));
@@ -116,7 +115,7 @@ app.get("/:customListName", async (req,res)=>{
     }
 })
 
-port=process.env.PORT;
+var port=process.env.PORT;
 if(port==null || port=="")
 {
     port=3000;
