@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/icon.png"  type="png">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css">
+    <title>ToDo</title>
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const checkboxes = document.querySelectorAll(".List input[type='checkbox']");
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", () => {
+                    const label = checkbox.nextElementSibling;
+                    if (checkbox.checked) {
+                        console.log("checked");
+                        label.style.textDecoration = "line-through";
+                    } else {
+                        label.style.textDecoration = "none";
+                    }
+                });
+            });
+         });
+    </script>
+
+
+</head>
+<body>
+
+    <div class="date-time">
+        <% if(locals.title) { %>
+            <p style="font-size: 30px; margin-top:10px;">
+                <%=title %>
+            </p>
+        <% }else{ %>
+            <p>Today</p>
+        <% } %>
+    </div>
+
+    <div id="ListBox" class="ListBox">       
+        <% if(locals.content){ %>
+            <% content.forEach((item)=>{ %>
+                <form action="/delete" method="post">
+                    <div class="List">
+                        <input type="checkbox" name="checkbox" value="<%=item._id%>" onchange="this.form.submit()" style="margin-left:20px">
+                        <label style="color:black; margin-left:30px"> <%=item.name %> </label>
+                    </div>
+                    <input type="hidden" name="hidden" value="<%=title%>">
+                </form>
+            <% }) %>
+        <% } %>
+
+        <form class="List" action="/" method="post">
+            <input id="textbox" class="textbox" type="text" name="inputvalue" placeholder="New Item">
+            <button type="submit" name="button" value="<%=title%>">
+                    <div class="vertical">
+                    </div>
+                    <div class="horizontal">
+                    </div>
+            </button>
+        </form>
+    </div>
+</body>
+</html>
