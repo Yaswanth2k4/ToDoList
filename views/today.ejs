@@ -27,7 +27,7 @@
 
 </head>
 <body>
-
+    
     <div class="date-time">
         <% if(locals.title) { %>
             <p style="font-size: 30px; margin-top:10px;">
@@ -37,6 +37,18 @@
             <p>Today</p>
         <% } %>
     </div>
+
+    <% if(locals.title==="Today"){ %>
+        <form class="CustomList" style="margin-top:50px;" action="/newList" method="post">
+            <input id="textbox" class="textbox" style="width: 150px;" type="text" name="ListName" placeholder="New List?">
+            <button type="submit" class="newListButton" name="newListbutton" value="CustomList" >
+                    <div class="vertical">
+                    </div>
+                    <div class="horizontal">
+                    </div>
+            </button>
+        </form>
+    <%}%>
 
     <div id="ListBox" class="ListBox">       
         <% if(locals.content){ %>
@@ -53,7 +65,7 @@
 
         <form class="List" action="/" method="post">
             <input id="textbox" class="textbox" type="text" name="inputvalue" placeholder="New Item">
-            <button type="submit" name="button" value="<%=title%>">
+            <button class="Add" type="submit" name="button" value="<%=title%>">
                     <div class="vertical">
                     </div>
                     <div class="horizontal">
