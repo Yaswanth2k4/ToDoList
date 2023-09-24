@@ -149,6 +149,10 @@ label{
     border:none;
 }
 
+.newListButton:hover{
+    background-color:#a64dff;
+}
+
 .Home{
     width:100px;
     height:40px;
