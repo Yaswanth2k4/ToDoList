@@ -105,7 +105,37 @@ label{
     top:21px;
 }
 
-button{
+.Add{
+    position: relative;
+    width:45px;
+    height:45px;
+    left:40px;
+    border-radius: 50%;
+    background-color: #9933ff;
+    border:none;
+}
+
+
+.CustomList{
+    text-align: center;
+    color:white;
+    align-items: center;
+    width:250px;
+    height:60px;
+    border-bottom: 1px solid lightgray;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+}
+
+.CustomList ::placeholder{
+    text-align: center;
+    font-size: 15px;
+}
+
+.newListButton{
     position: relative;
     width:45px;
     height:45px;
